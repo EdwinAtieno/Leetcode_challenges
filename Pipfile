@@ -9,6 +9,8 @@ isort = "*"
 flake9 = "*"
 black = "*"
 pre-commit = "*"
+flake8 = "*"
+pytest = "*"
 
 [dev-packages]
 
