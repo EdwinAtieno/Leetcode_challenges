@@ -7,4 +7,5 @@ def fibonacci(n: int) -> int:
 
 nterm = int(input("How many terms? "))
 
-print(fibonacci(nterm))
+if __name__ == "__main__":
+    print(fibonacci(nterm))
