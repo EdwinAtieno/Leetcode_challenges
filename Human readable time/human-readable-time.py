@@ -15,3 +15,7 @@ def make_readable(seconds):
     minutes = (seconds % 3600) // 60
     seconds = seconds % 60
     return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+
+"""
+In Python, the :02d is a string formatting specifier used with the format() method or f-strings to control how numbers are displayed. It is commonly used for formatting integers, ensuring that they have a minimum width of two characters, and are zero-padded on the left if necessary.
+"""

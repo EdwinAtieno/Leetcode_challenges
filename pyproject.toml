@@ -3,6 +3,9 @@ line-length = 79
 include = '\.pyi?$'
 force_grid_wrap = 2
 exclude = '''
+[tool.poetry.extras]
+pipfile_deprecated_finder = ["pip-shims>=0.3.4"]
+
 /(
     \.git
   | \.hg
