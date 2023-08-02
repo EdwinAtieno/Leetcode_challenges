@@ -10,3 +10,23 @@ Based on: http://oj.leetcode.com/problems/two-sum/
 two_sum([1, 2, 3], 4) # returns [0, 2] or [2, 0]
 
 """
+
+
+def two_sum(numbers: list, target: int) -> list:  # type: ignore[return]
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            if numbers[i] + numbers[j] == target:
+                return [i, j]
+
+
+print(two_sum([1, 2, 3], 4))
+
+
+# Best practice and clever solution using enumerate() and list comprehension:
+
+
+def two_sums(numbers: list, target: int) -> tuple:  # type: ignore[return]
+    for i, val1 in enumerate(numbers[:-1]):
+        for j, val2 in enumerate(numbers[i + 1 :]):
+            if val1 + val2 == target:
+                return i, j + i + 1
