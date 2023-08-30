@@ -30,3 +30,17 @@ def two_sums(numbers: list, target: int) -> tuple:  # type: ignore[return]
         for j, val2 in enumerate(numbers[i + 1 :]):
             if val1 + val2 == target:
                 return i, j + i + 1
+
+
+"""
+given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
+For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5."""
+
+
+def solution(A: list) -> int:
+    A.sort()
+    smallest = 1
+    for i in A:
+        if i == smallest:
+            smallest += 1
+    return smallest
