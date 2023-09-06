@@ -133,3 +133,51 @@ def find_pairs(numbers: list) -> int:
 
 numbers = [30, 12, 29, 91]
 print(find_pairs(numbers))
+
+
+"""
+write a function that given a list of numbers it iterates over and sums up any 3 numbers to get 30.
+"""
+
+
+def solution(new_number: list) -> list:
+    # Check if the list has at least 3 numbers
+    if len(new_number) < 3:
+        return []
+
+    # Initialize an empty list to store the triplets
+    triplets = []
+
+    # Sort the input list
+    new_number.sort()
+
+    # Iterate through the list using three pointers
+    for i in range(len(new_number) - 2):
+        left = i + 1
+        right = len(new_number) - 1
+
+        while left < right:
+            current_sum = new_number[i] + new_number[left] + new_number[right]
+            print(current_sum)
+
+            if current_sum == 30:
+                triplets.append(
+                    [new_number[i], new_number[left], new_number[right]]
+                )
+                left += 1
+                right -= 1
+            elif current_sum < 30:
+                left += 1
+            else:
+                right -= 1
+
+    return triplets
+
+
+def solutions(old_numbers: list) -> bool:
+    for i in range(len(old_numbers)):
+        for j in range(i + 1, len(old_numbers)):
+            for k in range(j + 1, len(old_numbers)):
+                if old_numbers[i] + old_numbers[j] + old_numbers[k] == 30:
+                    return True
+    return False
