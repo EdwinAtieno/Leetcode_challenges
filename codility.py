@@ -181,3 +181,12 @@ def solutions(old_numbers: list) -> bool:
                 if old_numbers[i] + old_numbers[j] + old_numbers[k] == 30:
                     return True
     return False
+
+
+def sol(n: list, data: list) -> bool:
+    for i in range(len(data)):
+        for j in range(i + 1, len(data)):
+            for k in range(j + 1, len(data)):
+                if data[i] + data[j] + data[k] == 30:
+                    return True
+    return False
