@@ -9,6 +9,7 @@
 This repository contains solutions to various problems from LeetCode, a popular online platform for coding interview preparation.
 
 ## Table of Contents
+* new ideas
 
 * [About the Repository](#about-the-repository)
 * [Project Setup](#project-setup)
