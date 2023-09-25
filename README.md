@@ -7,7 +7,12 @@
 # Leetcode_challenges
 
 This repository contains solutions to various problems from LeetCode, a popular online platform for coding interview preparation.
+# Tech stack
+1. Python
+2. ReactJs
+3. Javascript.
 
+   
 ## Table of Contents
 * new ideas
 
