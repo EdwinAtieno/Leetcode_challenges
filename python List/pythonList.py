@@ -129,36 +129,39 @@ for x in fruits:
         newlist.append(x)
 print(newlist)
 
-"""With list comprehension you can do all that with only one line of code:"""
-fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
-newlist = [x for x in fruits if "a" in x]
 
-"""Only accept items that are not "apple":"""
-newlists = [x for x in fruits if x != "apple"]
+def function1():
+    """With list comprehension you can do all that with only one line of code:"""
+    fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+    newlist = [x for x in fruits if "a" in x]
 
-"""You can use the range() function to create an iterable:"""
-newlist1 = [x for x in range(10)]
+    """Only accept items that are not "apple":"""
+    newlists = [x for x in fruits if x != "apple"]
 
-"""Set the values in the new list to upper case:"""
-newlist3 = [x.upper() for x in fruits]
-print(newlist, newlist1, newlist3, newlists)
+    """You can use the range() function to create an iterable:"""
+    newlist1 = [x for x in range(10)]
 
-"""
-The expression can also contain conditions, not like a filter, but as a way to manipulate the outcome:
-"""
-thislist = ["apple", "banana", "cherry"]
-newlist = [x if x != "banana" else "orange" for x in thislist]
-print(thislist, newlist)
+    """Set the values in the new list to upper case:"""
+    newlist3 = [x.upper() for x in fruits]
+    print(newlist, newlist1, newlist3, newlists)
 
-"""Sort the list alphabetically:"""
-thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
-thislist.sort()
-print(thislist)
+    """
+    The expression can also contain conditions, not like a filter, but as a way to manipulate the outcome:
+    """
+    thislist = ["apple", "banana", "cherry"]
+    newlist = [x if x != "banana" else "orange" for x in thislist]
+    print(thislist, newlist)
 
-"""Sort the list descending:"""
-thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
-thislist.sort(reverse=True)
-print(thislist)
+    """Sort the list alphabetically:"""
+    thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+    thislist.sort()
+    print(thislist)
+
+    """Sort the list descending:"""
+    thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+    thislist.sort(reverse=True)
+    print(thislist)
+
 
 """Sort the list based on how close the number is to 50:"""
 
