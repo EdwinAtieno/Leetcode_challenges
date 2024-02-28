@@ -12,7 +12,7 @@ This repository contains solutions to various problems from LeetCode, a popular 
 2. ReactJs
 3. Javascript.
 
-   
+
 ## Table of Contents
 * new ideas
 

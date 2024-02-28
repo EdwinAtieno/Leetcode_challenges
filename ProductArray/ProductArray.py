@@ -17,6 +17,7 @@ Input: nums = [-1,1,0,-3,3]
 Output: [0,0,9,0,0]
 """
 
+
 def productExceptSelf(nums):
     """
     :type nums: List[int]
@@ -36,6 +37,7 @@ def productExceptSelf(nums):
         result.append(product / num)
 
     return result
+
 
 def productExceptSelfs(nums):
     """
@@ -61,4 +63,4 @@ def productExceptSelfs(nums):
     return output
 
 
-print(productExceptSelf([1,2,3,4]))
+print(productExceptSelf([1, 2, 3, 4]))
