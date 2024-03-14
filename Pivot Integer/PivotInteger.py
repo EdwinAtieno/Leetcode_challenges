@@ -41,10 +41,10 @@ class Solution(object):
         if n == 2:
             return -1
 
-        total=0
-        for i in range(1, n+1):
-            total +=i
-            if total == sum([x for x in range(i, n+1)]):
+        total = 0
+        for i in range(1, n + 1):
+            total += i
+            if total == sum([x for x in range(i, n + 1)]):
                 return i
         return -1
 
@@ -54,6 +54,6 @@ class Solution(object):
         if n == 2:
             return -1
         for i in range(1, n):
-            if sum(range(1, i+1)) == sum(range(i, n+1)):
+            if sum(range(1, i + 1)) == sum(range(i, n + 1)):
                 return i
         return -1
