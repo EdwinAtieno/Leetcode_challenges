@@ -44,7 +44,7 @@ def dict1() -> None:
     print(mydict)
 
 
-def nestedDict() -> None:
+def nested_dict() -> None:
     myfamily = {
         "child1": {"name": "Emil", "year": 2004},
         "child2": {"name": "Tobias", "year": 2007},
