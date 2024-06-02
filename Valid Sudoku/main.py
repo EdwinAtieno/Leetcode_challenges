@@ -1,4 +1,4 @@
-import pickle
+import pickle  # noqa: F401
 
 import cv2
 import mediapipe as mp
