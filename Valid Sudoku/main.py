@@ -1,18 +1,10 @@
-<<<<<<< HEAD
-<<<<<<<< HEAD:Valid Sudoku/main.py
-=======
->>>>>>> 3471a07 (Mian master (#58))
 import pickle
 
 import cv2
 import mediapipe as mp
 import numpy as np
-
-<<<<<<< HEAD
-model_dict = pickle.load(open("../model.p", "rb"))
-=======
+  
 model_dict = pickle.load(open("./model.p", "rb"))
->>>>>>> 3471a07 (Mian master (#58))
 model = model_dict["model"]
 cap = cv2.VideoCapture(0)
 
@@ -119,8 +111,3 @@ HandGestures()
 
 cap.release()
 cv2.destroyAllWindows()
-<<<<<<< HEAD
-========
->>>>>>>> 3471a07 (Mian master (#58)):main.py
-=======
->>>>>>> 3471a07 (Mian master (#58))
