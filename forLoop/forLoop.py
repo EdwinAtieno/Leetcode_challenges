@@ -1,8 +1,8 @@
-x='abcd'
+x = "abcd"
 
 for i in range(len(x)):
     print(x)
-    x="a"
+    x = "a"
 
 for i in range(len(x)):
     x = "a"
@@ -11,4 +11,3 @@ for i in range(len(x)):
 for i in range(len(x)):
     x[i].upper()
 print(x)
-
