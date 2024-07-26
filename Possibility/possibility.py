@@ -49,3 +49,24 @@ for key in keys:
     if match:
         print("The correct key is:", key)
         break
+
+
+class Solution(object):
+    def groupAnagrams(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: List[List[str]]
+        """
+        output = {}
+
+        for word in strs:
+            word_list = list(word)
+            word_list.sort()
+            word_key = "".join(word_list)
+
+            if output.get(word_key):
+                output.get(word_key).append(word)
+            else:
+                output[word_key] = [word]
+
+        return [val for val in output.values()]
