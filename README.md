@@ -7,8 +7,14 @@
 # Leetcode_challenges
 
 This repository contains solutions to various problems from LeetCode, a popular online platform for coding interview preparation.
+# Tech stack
+1. Python
+2. ReactJs
+3. Javascript.
+
 
 ## Table of Contents
+* new ideas
 
 * [About the Repository](#about-the-repository)
 * [Project Setup](#project-setup)
@@ -23,6 +29,9 @@ Each subfolder in this repository corresponds to a particular problem on LeetCod
 Within each folder, you will find a solution file (usually in Python, Java or C++) and a README file that explains the problem and provides the solution's time and space complexity.
 
 All solutions are thoroughly tested on the LeetCode platform and passed all test cases. However, if you find any errors or mistakes in the code or the explanation, please feel free to open an issue or submit a pull request.
+
+
+
 
 ## Project Setup
 
