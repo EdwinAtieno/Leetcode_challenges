@@ -13,6 +13,7 @@ Only the filled cells need to be validated according to the mentioned rules.
 Example 1:
 
 
+
 Input: board =
 [["5","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
