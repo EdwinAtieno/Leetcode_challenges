@@ -50,6 +50,7 @@ for key in keys:
         print("The correct key is:", key)
         break
 
+
 class Solution(object):
     def groupAnagrams(self, strs):
         """
@@ -57,7 +58,6 @@ class Solution(object):
         :rtype: List[List[str]]
         """
         output = {}
-
 
         for word in strs:
             word_list = list(word)
@@ -67,7 +67,6 @@ class Solution(object):
             if output.get(word_key):
                 output.get(word_key).append(word)
             else:
-                output[word_key] =[word]
-
+                output[word_key] = [word]
 
         return [val for val in output.values()]

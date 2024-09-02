@@ -1,12 +1,13 @@
 import pickle
-import cv2
-import mediapipe as mp
-from picamera2 import Picamera2
-import numpy as np
 import time
 
-model_dict = pickle.load(open('model_v2.p', 'rb'))
-model = model_dict['model']
+import cv2
+import mediapipe as mp
+import numpy as np
+from picamera2 import Picamera2
+
+model_dict = pickle.load(open("model_v2.p", "rb"))
+model = model_dict["model"]
 
 # Create a Picamera2 object
 picam2 = Picamera2()
@@ -37,7 +38,34 @@ mp_drawing_styles = mp.solutions.drawing_styles
 
 hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.3)
 
-labels_dict = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z'}
+labels_dict = {
+    0: "A",
+    1: "B",
+    2: "C",
+    3: "D",
+    4: "E",
+    5: "F",
+    6: "G",
+    7: "H",
+    8: "I",
+    9: "J",
+    10: "K",
+    11: "L",
+    12: "M",
+    13: "N",
+    14: "O",
+    15: "P",
+    16: "Q",
+    17: "R",
+    18: "S",
+    19: "T",
+    20: "U",
+    21: "V",
+    22: "W",
+    23: "X",
+    24: "Y",
+    25: "Z",
+}
 
 while True:
     tStart = time.time()
@@ -48,9 +76,11 @@ while True:
 
     # Capture the image
     im = picam2.capture_array()
-    
+
     # Display the FPS count
-    cv2.putText(im, str(int(fps)) + ' FPS', pos, font, height, myColor, weight)
+    cv2.putText(
+        im, str(int(fps)) + " FPS", pos, font, height, myColor, weight
+    )
 
     H, W, _ = im.shape
 
@@ -84,17 +114,23 @@ while True:
         predicted_character = labels_dict[int(prediction[0])]
 
         cv2.rectangle(im, (x1, y1), (x2, y2), (0, 0, 0), 4)
-        cv2.putText(im, predicted_character, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 0, 0), 3,
-                    cv2.LINE_AA)
+        cv2.putText(
+            im,
+            predicted_character,
+            (x1, y1 - 10),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            1.3,
+            (0, 0, 0),
+            3,
+            cv2.LINE_AA,
+        )
 
     tEnd = time.time()
     loopTime = tEnd - tStart
     fps = 0.9 * fps + 0.1 * (1 / loopTime)
-    
-    cv2.imshow('frame', im)
+
+    cv2.imshow("frame", im)
     cv2.waitKey(1)
-    
-cap.release()
+
+cap.release()  # noqa
 cv2.destroyAllWindows()
-
-
