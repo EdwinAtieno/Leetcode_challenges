@@ -10,9 +10,8 @@ from PIL import (
     ImageTk,
 )
 
-model_dict = pickle.load(open("./model.p", "rb"))
+model_dict = pickle.load(open("../model.p", "rb"))
 model = model_dict["model"]
-
 
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
@@ -118,20 +117,22 @@ class CameraApp:
 
                 predicted_character = labels_dict[int(prediction[0])]
 
-                cv2.rectangle(self.canvas, (x1, y1), (x2, y2), (0, 0, 0), 4)
-                cv2.putText(
-                    self.canvas,
-                    predicted_character,
-                    (x1, y1 - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    1.3,
-                    (0, 0, 0),
-                    3,
-                    cv2.LINE_AA,
+                self.canvas.delete(
+                    "all"
+                )  # Clear previous drawings on the canvas
+
+                self.canvas.create_rectangle(
+                    x1, y1, x2, y2, outline="black", width=4
+                )
+                self.canvas.create_text(
+                    x1,
+                    y1 - 10,
+                    text=predicted_character,
+                    font=("Helvetica", 13),
+                    fill="black",
                 )
 
-            cv2.imshow("frame", self.canvas)
-            cv2.waitKey(1)
+            self.window.after(10, self.start)
 
     def exit_app(self):
         self.cap.release()
@@ -150,3 +151,64 @@ class CameraApp:
 # Create a window and pass it to CameraApp
 root = tk.Tk()
 app = CameraApp(root, "Tkinter Camera App")
+
+
+"""
+from rest_framework import generics
+from rest_framework.exceptions import ValidationError
+from rest_framework.response import Response
+
+from inventory import models, serializers
+
+
+def validate_ids(data, field="id", unique=True):
+
+    if isinstance(data, list):
+        id_list = [int(x[field]) for x in data]
+
+        if unique and len(id_list) != len(set(id_list)):
+            raise ValidationError("Multiple updates to a single {} found".format(field))
+
+        return id_list
+
+    return [data]
+
+
+class ProductView(generics.UpdateAPIView):
+    serializer_class = serializers.ProductSerializer
+
+    def get_serializer(self, *args, **kwargs):
+        if isinstance(kwargs.get("data", {}), list):
+            kwargs["many"] = True
+        return super(ProductView, self).get_serializer(*args, **kwargs)
+
+    def get_queryset(self, ids=None):
+        if ids :
+            queryset = models.Product.objects.filter(id__in=ids)
+        else:
+            queryset = models.Product.objects.all()
+        return queryset
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+    def update(self, request, *args, **kwargs):
+
+        ids = validate_ids(request.data)
+
+        instances = self.get_queryset(ids=ids)
+
+        serializer = self.get_serializer(
+            instances, data=request.data, partial=False, many=True
+        )
+
+        serializer.is_valid(raise_exception=True)
+
+        self.perform_update(serializer)
+
+        return Response(serializer.data)
+
+    def perform_update(self, serializer):
+        serializer.save()
+
+"""

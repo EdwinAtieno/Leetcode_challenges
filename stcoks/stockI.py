@@ -25,10 +25,11 @@ Constraints:
 1 <= prices.length <= 105
 0 <= prices[i] <= 104
 """
+from typing import Any
 
 
 class Solution(object):
-    def maxProfit(self, prices):
+    def max_profit(self, prices: Any) -> Any:
         """
         :type prices: List[int]
         :rtype: int

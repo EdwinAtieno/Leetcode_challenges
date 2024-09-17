@@ -3,9 +3,11 @@ def create_phone_number(n: list) -> str:
 
 
 """
-    .format(): This is a string method that is used to perform string formatting. It allows you to insert values into a string in a specified format.
+    .format(): This is a string method that is used to perform string formatting. It allows you to insert values into a
+     string in a specified format.
 
-    *n: The asterisk (*) before n is used to unpack the elements from the n iterable (e.g., a tuple, list, etc.). It allows you to pass multiple arguments to the .format() method.
+    *n: The asterisk (*) before n is used to unpack the elements from the n iterable (e.g., a tuple, list, etc.). It
+    allows you to pass multiple arguments to the .format() method.
 
     Here's a step-by-step explanation of how .format(*n) works:
 """
