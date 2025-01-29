@@ -76,7 +76,6 @@ plt.title(
     "Timeline of AI Policy Developments in Higher Education (2014-2024)"
 )
 plt.show()
-
 class Solution(object):
     def isPalindrome(self, s):
         """
